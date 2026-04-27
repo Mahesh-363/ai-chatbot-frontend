@@ -13,6 +13,10 @@ const GROQ_KEY = import.meta.env.VITE_GROQ_API_KEY
 const GEMINI_KEY = import.meta.env.VITE_GEMINI_API_KEY
 const PROVIDER = import.meta.env.VITE_AI_PROVIDER || 'groq'
 
+export function getProvider() {
+  return PROVIDER
+}
+
 export const checkKey = () => {
   if (PROVIDER === 'groq') return !!GROQ_KEY && GROQ_KEY !== 'gsk_your_key_here'
   if (PROVIDER === 'gemini') return !!GEMINI_KEY
